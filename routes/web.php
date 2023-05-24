@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,12 @@ use App\Http\Controllers\SiswaController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/', [SiswaController::class, 'landing'])->name('landing');
+
 Route::resource('siswa', SiswaController::class);
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

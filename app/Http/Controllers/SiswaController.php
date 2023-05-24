@@ -12,4 +12,10 @@ class SiswaController extends Controller
         $siswa = Siswa::orderBy('id', 'DESC')->get();
         return view('siswa.index', compact('siswa'));
     }
+
+    public function landing()
+    {
+        $siswa = Siswa::all();
+        return view('welcome', compact('siswa'));
+    }
 }
