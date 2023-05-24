@@ -89,7 +89,7 @@
                 <a href="#">Produk</a>
                 <ul class="submenu">
                     <li><a href="#">Kategori</a></li>
-                    <li><a href="{{ route('siswa.index') }}">Daftar Siswa</a></li>
+                    <li><a href="{{ route('siswa.index') }}">Daftar Pengguna</a></li>
                 </ul>
             </li>
             <li class="menu-item active">
@@ -108,15 +108,7 @@
         <!-- Your dynamic content goes here -->
     </div>
 
-    <script>
-        // JavaScript for handling submenu toggle
-        const submenuItems = document.querySelectorAll('.sidebar li.menu-item');
-        submenuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
-    </script>
+    
 </body>
 </html>
 
