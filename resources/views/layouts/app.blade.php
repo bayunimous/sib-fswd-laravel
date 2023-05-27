@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         /* CSS untuk Halaman Dashboard */
-.container {
-    margin-top: 50px;
-}
+        .container {
+            margin-top: 50px;
+        }
+        .table {
+            margin-top: 20px;
+        }
+        .btn-primary,
+        .btn-danger {
+            margin-right: 5px;
+        }
 
 h1 {
     text-align: center;
