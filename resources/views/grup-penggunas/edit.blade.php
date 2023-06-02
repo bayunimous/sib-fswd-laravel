@@ -13,7 +13,11 @@
             <div class="form-group">
                 <label for="nama">Nama Grup</label>
                 <input type="text" name="nama" id="nama" class="form-control" value="{{ $grupPengguna->nama }}" required>
+                @error('nama')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
+            
 
             <button type="submit" class="btn btn-primary">Simpan</button>
             <a href="{{ route('grup-penggunas.index') }}" class="btn btn-secondary">Batal</a>

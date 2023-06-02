@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Models\KategoriProduk;
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
 
 class KategoriProdukController extends Controller
 {
@@ -23,7 +24,7 @@ class KategoriProdukController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
+            'nama' => 'required|min:3',
         ]);
 
         $kategoriProduk = KategoriProduk::create([
@@ -41,7 +42,7 @@ class KategoriProdukController extends Controller
     public function update(Request $request, KategoriProduk $kategoriProduk)
     {
         $request->validate([
-            'nama' => 'required',
+            'nama' => 'required|min:3',
         ]);
 
         $kategoriProduk->nama = $request->input('nama');

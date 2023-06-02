@@ -12,6 +12,9 @@
             <div class="form-group">
                 <label for="nama">Nama Grup</label>
                 <input type="text" name="nama" id="nama" class="form-control" required>
+                @error('nama')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
 
             <button type="submit" class="btn btn-primary">Simpan</button>

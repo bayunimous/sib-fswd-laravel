@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Models\GrupPengguna;
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
 
 class GrupPenggunaController extends Controller
 {
@@ -23,7 +24,7 @@ class GrupPenggunaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
+            'nama' => 'required|min:3',
         ]);
 
         $grupPengguna = GrupPengguna::create([
@@ -41,7 +42,7 @@ class GrupPenggunaController extends Controller
     public function update(Request $request, GrupPengguna $grupPengguna)
     {
         $request->validate([
-            'nama' => 'required',
+            'nama' => 'required|min:3',
         ]);
 
         $grupPengguna->nama = $request->input('nama');

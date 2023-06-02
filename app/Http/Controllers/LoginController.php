@@ -18,12 +18,22 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             return redirect()->intended('/dashboard');
-        }
 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ]);
+        }
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/');
+    }
+
     protected function authenticated(Request $request, $user)
     {
         if ($user->hasRole('admin')) {

@@ -23,7 +23,7 @@ class SliderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|min:5',
             'image' => 'required|image',
         ]);
 
@@ -44,7 +44,7 @@ class SliderController extends Controller
     public function update(Request $request, Slider $slider)
     {
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|min:5',
             'image' => 'image',
         ]);
 

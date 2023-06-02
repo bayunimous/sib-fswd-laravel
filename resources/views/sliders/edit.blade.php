@@ -11,7 +11,11 @@
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title" class="form-control" value="{{ $slider->title }}" required>
+                @error('title')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
+            
             <div class="form-group">
                 <label for="image">Image</label>
                 <input type="file" name="image" id="image" class="form-control-file">

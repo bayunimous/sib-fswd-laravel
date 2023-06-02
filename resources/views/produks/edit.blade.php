@@ -1,5 +1,4 @@
-<!-- produk/edit.blade.php -->
-
+<!-- edit.blade.php -->
 @extends('layouts.app')
 
 @section('content')
@@ -17,6 +16,9 @@
                             <div class="form-group">
                                 <label for="nama">Nama Produk</label>
                                 <input type="text" name="nama" class="form-control" value="{{ $produk->nama }}" required>
+                                @error('nama')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
 
                             <div class="form-group">
@@ -33,11 +35,17 @@
                             <div class="form-group">
                                 <label for="harga">Harga</label>
                                 <input type="number" name="harga" class="form-control" value="{{ $produk->harga }}" required>
+                                @error('harga')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi</label>
                                 <textarea name="deskripsi" class="form-control" required>{{ $produk->deskripsi }}</textarea>
+                                @error('deskripsi')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
 
                             <button type="submit" class="btn btn-primary">Simpan</button>

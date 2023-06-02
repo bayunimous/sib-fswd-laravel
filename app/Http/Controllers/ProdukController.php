@@ -7,6 +7,8 @@ namespace App\Http\Controllers;
 use App\Models\Kategori;
 use App\Models\Produk;
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
+
 
 class ProdukController extends Controller
 {
