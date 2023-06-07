@@ -15,6 +15,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Middleware\RoleMiddleware;
+use App\Http\Controllers\ApiProdukController;
 
 
 
@@ -87,3 +88,7 @@ Route::middleware('role:user')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::resource('produk', ProdukController::class)->only(['index', 'show']);
 });
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index')->middleware('role:admin');
+Route::get('/staff', [StaffController::class, 'index'])->name('staff.index')->middleware('role:staff');
+Route::get('/user', [UserController::class, 'index'])->name('user.index')->middleware('role:user');

@@ -1,49 +1,28 @@
-<!-- resources/views/produk/create.blade.php -->
-
 @extends('layouts.app')
 
 @section('content')
     <div class="container">
-        <h1>Tambah Produk Baru</h1>
-        <form action="{{ route('produk.store') }}" method="POST" enctype="multipart/form-data">
+        <h1>Add Produk</h1>
+        <form action="{{ route('produks.store') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="nama">Nama Produk</label>
-                <input type="text" class="form-control" id="nama" name="nama" required>
-                @error('nama')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
+                <label for="nama">Nama</label>
+                <input type="text" name="nama" id="nama" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="kategori_id">Kategori</label>
-                <select class="form-control" id="kategori_id" name="kategori_id" required>
-                    <option value="">Pilih Kategori</option>
-                    <option value="">Kategori A</option>
-                    <option value="">Kategori B</option>
+                <label for="harga">Harga</label>
+                <input type="number" name="harga" id="harga" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="kategori">Kategori</label>
+                <select name="kategori" id="kategori" class="form-control" required>
+                    <option value="">Select Kategori</option>
                     @foreach($kategoris as $kategori)
                         <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
                     @endforeach
                 </select>
-                @error('kategori_id')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
             </div>
-            <div class="form-group">
-                <label for="harga">Harga</label>
-                <input type="number" class="form-control" id="harga" name="harga" required>
-                @error('harga')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label for="gambar">Gambar Produk</label>
-                <input type="file" class="form-control-file" id="gambar" name="gambar" required>
-                @error('gambar')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn btn-primary">Add</button>
         </form>
-        
     </div>
 @endsection

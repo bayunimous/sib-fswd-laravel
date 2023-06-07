@@ -22,7 +22,7 @@
                     <td>{{ $produk->id }}</td>
                     <td>{{ $produk->nama }}</td>
                     <td>{{ $produk->harga }}</td>
-                    <td>{{ $produk->kategori->nama }}</td>
+                    <td>{{ $produk->kategori_id }}</td>
                     <td>
                         <a href="{{ route('produks.edit', $produk->id) }}" class="btn btn-primary">Edit</a>
                         <form action="{{ route('produks.destroy', $produk->id) }}" method="POST" style="display: inline-block;">
